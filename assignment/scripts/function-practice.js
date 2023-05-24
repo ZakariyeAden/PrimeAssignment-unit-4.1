@@ -47,10 +47,17 @@ console.log('isPositive - should say true', isPositive(3));
 console.log('isPositive - should say false', isPositive(0));
 console.log('isPositive - should say false', isPositive(-3));
 
+console.log('isPositive - should say false', isPositive(-100));
+
 
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
+  if(array && array.length > 0){
+    return array[array.length - 1];
+  } else{
+    return null;
+  }
 
 }
 
@@ -58,7 +65,16 @@ function getLast(array) {
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-
+  for(let i = 0; i < value.length; i++){
+    if(value[i] === array){
+      console.log([value].find(array));
+      return true;
+      // array.find(val => val === value[i]);
+      // console.log([value].find(value))
+    } else {
+      return false;
+    }
+  }
 }
 
 // ----------------------
@@ -67,17 +83,29 @@ function find(value, array) {
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+  letter = /^[a-zA-Z]+$/;
+  if(string.length > 4 && string.length < 25){
+    if(letter.test(string.charAt(0))){
+      return true;
+    }else {
+      false;
+    }
+  }else {
+    return false;
+  }
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
 console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
-function sumAll() {
+function sumAll(num) {
   let sum = 0;
   // TODO: loop to add items
-
+  for(let i = 0; i < num.length; i++){
+    sum += num[i];
+  }
   // TODO: return the sum
+  return sum;
 }
 
 // 10. Function to return a new array of all positive (greater than zero)
