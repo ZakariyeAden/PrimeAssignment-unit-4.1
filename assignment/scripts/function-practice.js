@@ -15,10 +15,11 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
-  return name;
+  return `Hello, Your name${name}`;
 }
 // Remember to call the function to test
-  console.log('Hello, Your Name', helloName('Zakariye'));
+  console.log(helloName('Zakariye'));
+  console.log(helloName('Aden'));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber, secondNumber) {
@@ -65,33 +66,28 @@ function getLast(array) {
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
-  for(let i = 0; i < value.length; i++){
-    if(value[i] === array){
-      console.log([value].find(array));
+  for(let val of array){
+    if(val === value){
       return true;
-      // array.find(val => val === value[i]);
-      // console.log([value].find(value))
-    } else {
+    }else{
       return false;
     }
   }
 }
-
+console.log('Find the Array', find(1, [1,2,3]));
+console.log('Find the Array', find(4, [1,2,3]));
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-  letter = /^[a-zA-Z]+$/;
-  if(string.length > 4 && string.length < 25){
-    if(letter.test(string.charAt(0))){
+  for(let char of string){
+    if(char === letter){
       return true;
-    }else {
-      false;
+    } else {
+      return false
     }
-  }else {
-    return false;
   }
 }
 console.log('isFirstLetter - should say true', isFirstLetter('a', 'apple'));
@@ -111,8 +107,22 @@ function sumAll(num) {
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
+function allPositive(val) {
+  let result = [];
 
+  for(let i = 0; i < val.length; i++){
+    if(0 <= val[i]){
+      result[val[i]] = true;
+    }
+  }
+
+  for(let i = 1; i < val.length; i++){
+    if(undefined === result[i]){
+      return i;
+    }
+  }
+  return 1;
+  
 }
 
 
@@ -120,6 +130,16 @@ function allPositive() {
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
 
+// Calculate average 
+// Describe: We must caculate average sumof the list.We
+function findAverage(array) {
+  // your code here
+  let sum = 0;
+  for(let prod of array){
+    sum += prod[i];
+  }
+  return 0;
+}
 
 // DO NOT MODIFY
 // Used for automated testing
