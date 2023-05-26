@@ -30,6 +30,7 @@ function addNumbers(firstNumber, secondNumber) {
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(a,b,c) {
+  // Multiply the params then call
   return a * b * c;
 }
 console.log(multiplyThree(2,3,4))
@@ -37,9 +38,11 @@ console.log(multiplyThree(2,3,4))
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
+  // If number is positive return true
   if (number > 0) {
     return true;
   }
+  // Return false
   return false;
 }
 // Call the function to test each outcome (true & false) 
@@ -54,9 +57,12 @@ console.log('isPositive - should say false', isPositive(-100));
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
+  // Check if it exists and length more than 0
   if(array && array.length > 0){
+    // Return the last item in the Array
     return array[array.length - 1];
   } else{
+    // return undefined
     return null;
   }
 
@@ -67,9 +73,11 @@ function getLast(array) {
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find(value, array) {
   for(let val of array){
+    // If Array equal to value return ture
     if(val === value){
       return true;
     }else{
+      // Return false otherwise
       return false;
     }
   }
@@ -83,9 +91,11 @@ console.log('Find the Array', find(4, [1,2,3]));
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
   for(let char of string){
+    // If String has letter from letter return true
     if(char === letter){
       return true;
     } else {
+      // Return false
       return false
     }
   }
@@ -95,9 +105,11 @@ console.log('isFirstLetter - should say false', isFirstLetter('z', 'apple'));
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(num) {
+  // Sum
   let sum = 0;
   // TODO: loop to add items
   for(let i = 0; i < num.length; i++){
+    // Add them up
     sum += num[i];
   }
   // TODO: return the sum
@@ -131,7 +143,7 @@ function allPositive(val) {
 //     here in a comment, write the function, and test it!
 
 // Calculate average 
-// Describe: We must caculate average sumof the list.We
+// Describe: We must caculate average sumof the list.
 function findAverage(array) {
   // your code here
   let sum = 0;
