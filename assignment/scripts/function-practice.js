@@ -26,7 +26,7 @@ function addNumbers(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
   return firstNumber + secondNumber;
 }
-
+console.log('addNumbers: 2 + 3', addNumbers(2,3));
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(a,b,c) {
@@ -34,7 +34,7 @@ function multiplyThree(a,b,c) {
   return a * b * c;
 }
 console.log(multiplyThree(2,3,4))
-
+console.log('multiplyThree 2,3,4:', multiplyThree(2,3,4));
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
@@ -63,9 +63,8 @@ function getLast(array) {
     return array[array.length - 1];
   } else{
     // return undefined
-    return null;
+    return undefined;
   }
-
 }
 
 // 7. Function to find a value in an array. Return true if the 
@@ -115,7 +114,7 @@ function sumAll(num) {
   // TODO: return the sum
   return sum;
 }
-
+console.log('sumAll 2,3,4:', sumAll(2,3,4));
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
@@ -123,20 +122,16 @@ function allPositive(val) {
   let result = [];
 
   for(let i = 0; i < val.length; i++){
-    if(0 <= val[i]){
+    if(val[i] >= 0){
       result[val[i]] = true;
+    } else {
+      console.log('theres a negative');
     }
   }
-
-  for(let i = 1; i < val.length; i++){
-    if(undefined === result[i]){
-      return i;
-    }
-  }
-  return 1;
-  
+  return result;
 }
-
+console.log('allPositive 2,3,4:', allPositive(2,3,4));
+console.log('allPositive 2,3,-1:', allPositive(2,3,-1));
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
