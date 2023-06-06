@@ -124,6 +124,7 @@ function allPositive(val) {
   for(let i = 0; i < val.length; i++){
     if(val[i] >= 0){
       result[val[i]] = true;
+      result.push(val[i]);
     } else {
       console.log('theres a negative');
     }
